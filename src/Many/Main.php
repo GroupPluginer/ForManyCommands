@@ -9,6 +9,7 @@ use pocketmine\utils\TextFormat as TF;
 use pocketmine\Player;
 use pocketmine\permission\Permission;
 use pocketmine\item\Item;
+use pocketmine\entity\Effect;
 
  class Main extends PluginBase{
  
@@ -19,4 +20,13 @@ use pocketmine\item\Item;
     public function onCommand(CommandSender $sender, Command $cmd, $label, array $args){
      switch($cmd->getName()){
       case 'superpower':
-      $sender->
+      if($sender->hasPermission("super.permission"));
+       $Effect = Effect::getEffect(1);
+       $effect->setAmplifier(2);
+       $effect->setVisable(true);
+       $effect->setDuration(1000000000);
+       $sender->addEffect($effect);
+     }else{
+      $sender->sendMessage("");
+       
+      
